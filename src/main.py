@@ -1,6 +1,7 @@
 import json
 from collections import defaultdict
 from loguru import logger
+import typing as t
 from pathlib import Path
 from fastapi.staticfiles import StaticFiles
 from fastapi import FastAPI, WebSocket, Request, BackgroundTasks
@@ -23,6 +24,14 @@ logger.info(f"BASE_DIR: {BASE_DIR}")
 
 app.mount("/static", StaticFiles(directory=str(BASE_DIR / "static")), name="static")
 templates = Jinja2Templates(directory=str(BASE_DIR / "templates"))
+
+
+def https_url_for(request: Request, name: str, **path_params: t.Any) -> str:
+    http_url = request.url_for(name, **path_params)
+    return http_url.replace("http", "https", 1)
+
+
+templates.env.globals["https_url_for"] = https_url_for
 
 
 class Notifier:

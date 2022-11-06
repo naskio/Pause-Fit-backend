@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block extras_head %}
-<link href="{{ url_for('static', path='/css/chat_room.css') }}" rel="stylesheet">
+<link href="{{ https_url_for(request,'static', path='/css/chat_room.css') }}" rel="stylesheet">
 {% endblock %}
 
 
@@ -33,5 +33,5 @@
 {% endblock %}
 
 {% block extras_js %}
-<script src="{{ url_for('static', path='/js/chat_room.js') }}" type="text/javascript"></script>
+<script src="{{ https_url_for(request,'static', path='/js/chat_room.js') }}" type="text/javascript"></script>
 {% endblock %}
