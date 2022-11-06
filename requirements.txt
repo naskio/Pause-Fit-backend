@@ -1,0 +1,8 @@
+starlette
+uvicorn[standard]
+fastapi
+pydantic
+python-multipart
+aiofiles
+jinja2
+loguru
