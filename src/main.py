@@ -78,7 +78,7 @@ notifier = Notifier()
 
 @app.get("/")
 async def hello_world(request: Request):
-    return {"message": "Hello World"}
+    return "Go to /{room}/{username}/ to join a chat room. Connect to WebSocket at /ws/{room}"
 
 
 # controller routes
