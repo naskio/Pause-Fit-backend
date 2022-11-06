@@ -10,4 +10,4 @@ services:
     volumes:
       - ./src:/src
     ports:
-      - "80:80"
+      - "${PORT:-80}:80"

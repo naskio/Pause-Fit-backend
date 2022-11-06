@@ -76,6 +76,11 @@ class Notifier:
 notifier = Notifier()
 
 
+@app.get("/")
+async def hello_world(request: Request):
+    return {"message": "Hello World"}
+
+
 # controller routes
 @app.get("/{room_name}/{user_name}")
 async def get(request: Request, room_name, user_name):

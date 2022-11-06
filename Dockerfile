@@ -37,5 +37,5 @@ RUN chmod -R a+rwx /src
 
 ENV PORT=80
 EXPOSE $PORT
-WORKDIR /src
+WORKDIR /
 ENTRYPOINT ["/run.sh"]
